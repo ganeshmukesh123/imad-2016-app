@@ -8,7 +8,7 @@ var articleOne = {
     title: 'Article One | Ganesh',
     heading: 'Article One',
     date: 'sep 5 2016',
-    content:'<p>
+    content: '<p>
             This is article one     This is article one     This is article one     This is article one
         </p>
         
@@ -31,27 +31,29 @@ function createtemplate(data){
     var content=data.content;
     var htmltemplate=
     "
-    <html>
-    <head>
-        <title>${title}
-        </title>
-        <link href="/ui/style.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div>
-        <a href="/">Home</a>
-        </div>
-        <hr>
-        <h3>${heading}
-        </h3>
-        <div>
-            ${date}
-        </div>
-        <div>
-             ${content}
-        </div>
-    </body>
-</html>
+            <html>
+            <head>
+                <title>
+                       ${title}
+                </title>
+                <link href="/ui/style.css" rel="stylesheet" />
+            </head>
+            <body>
+                <div>
+                <a href="/">Home</a>
+                </div>
+                <hr>
+                <h3>
+                     ${heading}
+                </h3>
+                <div>
+                    ${date}
+                </div>
+                <div>
+                     ${content}
+                </div>
+            </body>
+        </html>
     ";
     return htmltemplate;
 }
@@ -63,7 +65,7 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 app.get('/article-one', function (req, res) {
-  res.send(articleOne);
+  res.send(createtemplate(articleOne));
   });
 app.get('/article-two', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
