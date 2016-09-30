@@ -8,7 +8,8 @@ var articleOne = {
     title: 'Article One | Ganesh',
     heading: 'Article One',
     date: 'sep 5 2016',
-    content: '<p>
+    content: `
+    <p>
             This is article one     This is article one     This is article one     This is article one
         </p>
         
@@ -22,7 +23,7 @@ var articleOne = {
         
         <p>
             This is article one     This is article one     This is article one     This is article one
-        </p>'
+        </p>`
 };
 function createtemplate(data){
     var title=data.title;
@@ -30,7 +31,7 @@ function createtemplate(data){
     var heading=data.heading;
     var content=data.content;
     var htmltemplate=
-    "
+    `
             <html>
             <head>
                 <title>
@@ -54,7 +55,7 @@ function createtemplate(data){
                 </div>
             </body>
         </html>
-    ";
+    `;
     return htmltemplate;
 }
 app.get('/', function (req, res) {
