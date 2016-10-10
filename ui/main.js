@@ -20,7 +20,7 @@ img.onclick=function(){
 
 */
 var button=document.getElementById("counter");
-var counter=0;
+
 button.onclick= function(){
     //Create requestobject
     var request= new XMLHttpRequest();
@@ -38,4 +38,5 @@ button.onclick= function(){
     //make request
     request.open('GET','http://ganeshmukesh123.imad.hasura-app.io/counter',true);
     request.send(null);
+};
 };
